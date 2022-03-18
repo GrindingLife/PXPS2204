@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BHFunctioning.Models;
 using BHFunctioning.Data;
+using BHFunctioning.Models;
 namespace BHFunctioning.Controllers
 {
     public class DataVizController : Controller
@@ -27,8 +28,9 @@ namespace BHFunctioning.Controllers
         // POST: DataVizController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(HealthData obj)
         {
+
             try
             {
                 return RedirectToAction(nameof(Index));

@@ -2,6 +2,176 @@
 @{
     ViewData["Title"] = "Index";
 }
+@using BHFunctioning.Data
 
-<h1>Index</h1>
+<form class="form-inline col-md-3" method="post" asp-action="Create">
+    <table class="d-table">
+        <tr class="row">
+            <div class="row pb-2">
+                <h2 class="text-primary">Enter inputs</h2>
+            </div>
+        </tr>
+        <div asp-validation-summary="All"></div>
+        <tr>
+            <th>
+                <div>
+                    Data
+                </div>
+            </th>
+            <th class="align-content-center">
+                Input
+            </th>
 
+        </tr>
+        <tr>
+            <td>
+                
+                <label asp-for="NEET"></label>
+                <span asp-validation-for="NEET" class="text-danger"></span>
+            </td>
+            <td>
+                <div class="">
+                    <input class="form-check-input" value="1" asp-for="NEET" type="radio" name="inlineRadioOptions" id="neet1"/>
+                    <label class="form-check-label" for="neet1">Yes</label>
+               
+                    <input class="form-check-input" value="0" asp-for="NEET" type="radio" name="inlineRadioOptions" id="neet0"/>
+                    <label class="form-check-label" for="neet0">No</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="ChildDx"></label>
+                <span asp-validation-for="ChildDx" class="text-danger"></span>
+            </td>
+            <td>
+                <div class="">
+                    <input class="form-check-input" value="1" asp-for="ChildDx" type="radio" name="inlineRadioOptions2" id="childdx1"/>
+                    <label class="form-check-label" for="childdx1">Yes</label>
+
+                    <input class="form-check-input" value="0" asp-for="ChildDx" type="radio" name="inlineRadioOptions2" id="childdx0"/>
+                    <label class="form-check-label" for="childdx0">No</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Selfharm"></label>
+                <span asp-validation-for="Selfharm" class="text-danger"></span>
+            </td>
+            <td>
+                <div class="">
+                    <input class="form-check-input" value="1" asp-for="Selfharm" type="radio" name="inlineRadioOptions3" id="selfharm1"/>
+                    <label class="form-check-label" for="selfharm0">Yes</label>
+
+                    <input class="form-check-input" value="0" asp-for="Selfharm" type="radio" name="inlineRadioOptions3" id="selfharm0"/>
+                    <label class="form-check-label" for="selfharm1">No</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Psychosis"></label>
+                <span asp-validation-for="Psychosis" class="text-danger"></span>
+            </td>
+            <td>
+                
+                <div class="">
+                    <input class="form-check-input" value="1" asp-for="Psychosis" type="radio" name="inlineRadioOptions4" id="Psychosis1"/>
+                    <label class="form-check-label" for="Psychosis0">Yes</label>
+
+                    <input class="form-check-input" value="0" asp-for="Psychosis" type="radio" name="inlineRadioOptions4" id="Psychosis0"/>
+                    <label class="form-check-label" for="Psychosis1">No</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Medical"></label>
+                <span asp-validation-for="Medical" class="text-danger"></span>
+            </td>
+            <td>
+                
+                 <div class="">
+                    <input class="form-check-input" value="1" asp-for="Medical" type="radio" name="inlineRadioOptions5" id="Medical1"/>
+                    <label class="form-check-label" for="Medical1">Yes</label>
+
+                    <input class="form-check-input" value="0" asp-for="Medical" type="radio" name="inlineRadioOptions5" id="Medical0"/>
+                    <label class="form-check-label" for="Medical0">No</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Circadian"></label>
+                <span asp-validation-for="Circadian" class="text-danger"></span>
+            </td>
+            <td>
+                
+                <div class="">
+                    <input class="form-check-input" value="1" asp-for="Circadian" type="radio" name="inlineRadioOptions6" id="Circadian1"/>
+                    <label class="form-check-label" for="Circadian1">Yes</label>
+
+                    <input class="form-check-input" value="0" asp-for="Circadian" type="radio" name="inlineRadioOptions6" id="Circadian0"/>
+                    <label class="form-check-label" for="Circadian0">No</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Tripartite"></label>
+                <span asp-validation-for="Tripartite" class="text-danger"></span>
+            </td>
+            <td>
+                 <div class="">
+                    <input class="form-check-input" value="1" asp-for="Tripartite" type="radio" name="inlineRadioOptions7" id="Tripartite1"/>
+                    <label class="form-check-label" for="Tripartite1">Yes</label>
+
+                    <input class="form-check-input" value="0" asp-for="Tripartite" type="radio" name="inlineRadioOptions7" id="Tripartite0"/>
+                    <label class="form-check-label" for="Tripartite0">No</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="ClinicalStage"></label>
+                <span asp-validation-for="ClinicalStage" class="text-danger"></span>
+            </td>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" value="1" asp-for="ClinicalStage" type="radio" name="inlineRadioOptions8" id="ClinicalStage1"/>
+                    <label class="form-check-label" for="ClinicalStage1">Stage 1a</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" value="0" asp-for="ClinicalStage" type="radio" name="inlineRadioOptions8" id="ClinicalStage2"/>
+                    <label class="form-check-label" for="ClinicalStage2">Stage 1b</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" value="0" asp-for="ClinicalStage" type="radio" name="inlineRadioOptions8" id="ClinicalStage3"/>
+                    <label class="form-check-label" for="ClinicalStage3">Stage 2a+</label></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Sofas"></label>
+                <span asp-validation-for="Sofas" class="text-danger"></span>
+            </td>
+            <td>
+                <div class="btn-group input-group mb-2 mr-sm-2" role="group" aria-label="Basic example">
+                    <input value="1" asp-for="Sofas" type="button" class="btn btn-secondary">
+                    <input value="2" asp-for="Sofas" type="button" class="btn btn-secondary">
+                    <input value="3" asp-for="Sofas" type="button" class="btn btn-secondary">
+                    <input value="4" asp-for="Sofas" type="button" class="btn btn-secondary">
+                    <input value="5" asp-for="Sofas" type="button" class="btn btn-secondary">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
