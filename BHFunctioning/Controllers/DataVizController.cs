@@ -30,7 +30,17 @@ namespace BHFunctioning.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(HealthData obj)
         {
+            System.Diagnostics.Debug.WriteLine("Medical: " + obj.Medical);
+            System.Diagnostics.Debug.WriteLine("ChildDX: "+obj.ChildDx);
+            System.Diagnostics.Debug.WriteLine("Selfharm: "+obj.Selfharm);
+            System.Diagnostics.Debug.WriteLine("Sofas: "+ obj.Sofas);
+            System.Diagnostics.Debug.WriteLine("ClinicalStage: "+obj.ClinicalStage);
+            System.Diagnostics.Debug.WriteLine("Circadian: " + obj.Circadian);
+            System.Diagnostics.Debug.WriteLine("Tripartite: "+obj.Tripartite);
+            System.Diagnostics.Debug.WriteLine("Psychosis: "+obj.Psychosis);
+            System.Diagnostics.Debug.WriteLine("NEET: "+ obj.NEET);
 
+            return View(obj);
             try
             {
                 return RedirectToAction(nameof(Index));

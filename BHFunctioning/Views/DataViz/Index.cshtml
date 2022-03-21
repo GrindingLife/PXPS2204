@@ -3,7 +3,6 @@
     ViewData["Title"] = "Index";
 }
 @using BHFunctioning.Data
-
 <form class="form-inline col-md-3" method="post" asp-action="Create">
     <table class="d-table">
         <tr class="row">
@@ -31,10 +30,10 @@
             </td>
             <td>
                 <div class="">
-                    <input class="form-check-input" value="1" asp-for="NEET" type="radio" name="inlineRadioOptions" id="neet1"/>
+                    <input class="form-check-input" value="1" asp-for="NEET" type="radio" name="NEET" id="neet1"/>
                     <label class="form-check-label" for="neet1">Yes</label>
                
-                    <input class="form-check-input" value="0" asp-for="NEET" type="radio" name="inlineRadioOptions" id="neet0"/>
+                    <input class="form-check-input" value="0" asp-for="NEET" type="radio" name="NEET" id="neet0"/>
                     <label class="form-check-label" for="neet0">No</label>
                 </div>
             </td>
@@ -46,10 +45,10 @@
             </td>
             <td>
                 <div class="">
-                    <input class="form-check-input" value="1" asp-for="ChildDx" type="radio" name="inlineRadioOptions2" id="childdx1"/>
+                    <input class="form-check-input" value="1" asp-for="ChildDx" type="radio" name="ChildDx" id="childdx1"/>
                     <label class="form-check-label" for="childdx1">Yes</label>
 
-                    <input class="form-check-input" value="0" asp-for="ChildDx" type="radio" name="inlineRadioOptions2" id="childdx0"/>
+                    <input class="form-check-input" value="0" asp-for="ChildDx" type="radio" name="ChildDx" id="childdx0"/>
                     <label class="form-check-label" for="childdx0">No</label>
                 </div>
             </td>
@@ -61,10 +60,10 @@
             </td>
             <td>
                 <div class="">
-                    <input class="form-check-input" value="1" asp-for="Selfharm" type="radio" name="inlineRadioOptions3" id="selfharm1"/>
+                    <input class="form-check-input" value="1" asp-for="Selfharm" type="radio" name="Selfharm" id="selfharm1"/>
                     <label class="form-check-label" for="selfharm0">Yes</label>
 
-                    <input class="form-check-input" value="0" asp-for="Selfharm" type="radio" name="inlineRadioOptions3" id="selfharm0"/>
+                    <input class="form-check-input" value="0" asp-for="Selfharm" type="radio" name="Selfharm" id="selfharm0"/>
                     <label class="form-check-label" for="selfharm1">No</label>
                 </div>
             </td>
@@ -77,10 +76,10 @@
             <td>
                 
                 <div class="">
-                    <input class="form-check-input" value="1" asp-for="Psychosis" type="radio" name="inlineRadioOptions4" id="Psychosis1"/>
+                    <input class="form-check-input" value="1" asp-for="Psychosis" type="radio" name="Psychosis" id="Psychosis1"/>
                     <label class="form-check-label" for="Psychosis0">Yes</label>
 
-                    <input class="form-check-input" value="0" asp-for="Psychosis" type="radio" name="inlineRadioOptions4" id="Psychosis0"/>
+                    <input class="form-check-input" value="0" asp-for="Psychosis" type="radio" name="Psychosis" id="Psychosis0"/>
                     <label class="form-check-label" for="Psychosis1">No</label>
                 </div>
             </td>
@@ -93,10 +92,10 @@
             <td>
                 
                  <div class="">
-                    <input class="form-check-input" value="1" asp-for="Medical" type="radio" name="inlineRadioOptions5" id="Medical1"/>
+                    <input class="form-check-input" value="1" asp-for="Medical" type="radio" name="Medical" id="Medical1"/>
                     <label class="form-check-label" for="Medical1">Yes</label>
 
-                    <input class="form-check-input" value="0" asp-for="Medical" type="radio" name="inlineRadioOptions5" id="Medical0"/>
+                    <input class="form-check-input" value="0" asp-for="Medical" type="radio" name="Medical" id="Medical0"/>
                     <label class="form-check-label" for="Medical0">No</label>
                 </div>
             </td>
@@ -109,10 +108,10 @@
             <td>
                 
                 <div class="">
-                    <input class="form-check-input" value="1" asp-for="Circadian" type="radio" name="inlineRadioOptions6" id="Circadian1"/>
+                    <input class="form-check-input" value="1" asp-for="Circadian" type="radio" name="Circadian" id="Circadian1"/>
                     <label class="form-check-label" for="Circadian1">Yes</label>
 
-                    <input class="form-check-input" value="0" asp-for="Circadian" type="radio" name="inlineRadioOptions6" id="Circadian0"/>
+                    <input class="form-check-input" value="0" asp-for="Circadian" type="radio" name="Circadian" id="Circadian0"/>
                     <label class="form-check-label" for="Circadian0">No</label>
                 </div>
             </td>
@@ -124,10 +123,10 @@
             </td>
             <td>
                  <div class="">
-                    <input class="form-check-input" value="1" asp-for="Tripartite" type="radio" name="inlineRadioOptions7" id="Tripartite1"/>
+                    <input class="form-check-input" value="1" asp-for="Tripartite" type="radio" name="Tripartite" id="Tripartite1"/>
                     <label class="form-check-label" for="Tripartite1">Yes</label>
 
-                    <input class="form-check-input" value="0" asp-for="Tripartite" type="radio" name="inlineRadioOptions7" id="Tripartite0"/>
+                    <input class="form-check-input" value="0" asp-for="Tripartite" type="radio" name="Tripartite" id="Tripartite0"/>
                     <label class="form-check-label" for="Tripartite0">No</label>
                 </div>
             </td>
@@ -139,15 +138,15 @@
             </td>
             <td>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" value="1" asp-for="ClinicalStage" type="radio" name="inlineRadioOptions8" id="ClinicalStage1"/>
+                    <input class="form-check-input" value="1" asp-for="ClinicalStage" type="radio" name="ClinicalStage" id="ClinicalStage1"/>
                     <label class="form-check-label" for="ClinicalStage1">Stage 1a</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" value="0" asp-for="ClinicalStage" type="radio" name="inlineRadioOptions8" id="ClinicalStage2"/>
+                    <input class="form-check-input" value="2" asp-for="ClinicalStage" type="radio" name="ClinicalStage" id="ClinicalStage2"/>
                     <label class="form-check-label" for="ClinicalStage2">Stage 1b</label>
                     </div>
                     <div class="form-check form-check-inline">
-                    <input class="form-check-input" value="0" asp-for="ClinicalStage" type="radio" name="inlineRadioOptions8" id="ClinicalStage3"/>
+                    <input class="form-check-input" value="3" asp-for="ClinicalStage" type="radio" name="ClinicalStage" id="ClinicalStage3"/>
                     <label class="form-check-label" for="ClinicalStage3">Stage 2a+</label></div>
             </td>
         </tr>
@@ -158,11 +157,7 @@
             </td>
             <td>
                 <div class="btn-group input-group mb-2 mr-sm-2" role="group" aria-label="Basic example">
-                    <input value="1" asp-for="Sofas" type="button" class="btn btn-secondary">
-                    <input value="2" asp-for="Sofas" type="button" class="btn btn-secondary">
-                    <input value="3" asp-for="Sofas" type="button" class="btn btn-secondary">
-                    <input value="4" asp-for="Sofas" type="button" class="btn btn-secondary">
-                    <input value="5" asp-for="Sofas" type="button" class="btn btn-secondary">
+                    <span>1</span><input value="1" min="1" max="5" asp-for="Sofas" type="range" name="Sofas" class="" onchange="changeSlider"><span id="rangeSlider">5</span>
                 </div>
             </td>
         </tr>
@@ -174,4 +169,35 @@
         </tr>
 
     </table>
+
 </form>
+    <div class="align-content-around" id="DataViz">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script>
+
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Mushrooms', 3],
+                ['Onions', 1],
+                ['Olives', 1], 
+                ['Zucchini', 1],
+                ['Pepperoni', 2]
+            ]);
+            // Set chart options
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                'width':1000,
+                'height':1000};
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            }
+        </script>
+            <div id="chart_div" style="width:1000; height:1000"></div>
+    </div>
