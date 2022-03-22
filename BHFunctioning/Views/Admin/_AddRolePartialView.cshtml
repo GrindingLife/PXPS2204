@@ -1,0 +1,25 @@
+﻿@model Role
+
+<div class="modal fade" id="addRole">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="addRoleLable">Add role</h4>
+                <button type="button" class="btn-close" data-dimiss="modal">
+                    <span>X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="AddRole" class="form-control">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" name="Name" class="form-control"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-save="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

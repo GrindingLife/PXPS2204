@@ -7,6 +7,12 @@ namespace BHFunctioning.Controllers
 {
     public class DataVizController : Controller
     {
+        private readonly ApplicationDbContext _db;
+        public DataVizController(ApplicationDbContext db)
+        {
+            _db = db;
+
+        }
         // GET: DataVizController
         public ActionResult Index()
         {
@@ -20,6 +26,7 @@ namespace BHFunctioning.Controllers
         }
 
         // GET: DataVizController/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -40,7 +47,18 @@ namespace BHFunctioning.Controllers
             System.Diagnostics.Debug.WriteLine("Psychosis: "+obj.Psychosis);
             System.Diagnostics.Debug.WriteLine("NEET: "+ obj.NEET);
 
-            return View(obj);
+            //var _id = _db.Healthdata.SingleOrDefault(
+            //    a => a.Medical == obj.Medical && 
+            //    a.ChildDx == obj.ChildDx && 
+            //    a.Selfharm == obj.Selfharm &&
+            //    a.Sofas == obj.Sofas &&
+            //    a.ClinicalStage == obj.ClinicalStage &&
+            //    a.Circadian == obj.Circadian &&
+            //    a.Tripartite == obj.Tripartite &&
+            //    a.Psychosis == obj.Psychosis &&
+            //    a.NEET == obj.NEET);
+
+
             try
             {
                 return RedirectToAction(nameof(Index));

@@ -115,6 +115,7 @@ namespace BHFunctioning.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    TempData["success"] = "User logged in succesfully";
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

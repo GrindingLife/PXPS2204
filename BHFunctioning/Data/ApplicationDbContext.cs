@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using BHFunctioning.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BHFunctioning.Data
@@ -9,5 +10,6 @@ namespace BHFunctioning.Data
             : base(options)
         {
         }
+        public DbSet<HealthData> Healthdata { get; set; }
     }
 }
