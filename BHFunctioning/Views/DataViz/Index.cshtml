@@ -1,8 +1,8 @@
-﻿@model HealthData
+﻿@using BHFunctioning.Data
+@model HealthData
 @{
     ViewData["Title"] = "Index";
 }
-@using BHFunctioning.Data
 <form class="form-inline col-md-3 form-control" method="post" asp-action="create">
     <table class="d-table">
         <tr class="row">
@@ -123,11 +123,12 @@
             </td>
             <td class="d-table-cell p-1">
                 <div class="">
-                    <input class="form-check-input" value="1" asp-for="Tripartite" type="radio" name="Tripartite" id="Tripartite1" />
-                    <label class="form-check-label" for="Tripartite1">Yes</label>
-
-                    <input class="form-check-input" value="0" asp-for="Tripartite" type="radio" name="Tripartite" id="Tripartite0" />
-                    <label class="form-check-label" for="Tripartite0">No</label>
+                    <select asp-for="Tripartite" class="dropdown dropdown-header dropdown-item-text dropdown-toggle" name="Tripartite" id="Tripartite">
+                        <option class="dropdown-item" value="1">No mood disorder</option>
+                        <option class="dropdown-item" value="2">Manic fatigue</option>
+                        <option class="dropdown-item" value="3">Developmental psychosis</option>
+                        <option class="dropdown-item" value="4">Anxious depression</option>
+                    </select>
                 </div>
             </td>
         </tr>
@@ -153,17 +154,6 @@
             <td class="d-table-cell p-1">
                 <div class="btn-group input-group mb-2 mr-sm-2" role="group" aria-label="Basic example">
                     <span id="slider" class="p-1">1</span><input value="1" min="1" max="5" id="Sofas" asp-for="Sofas" type="range" name="Sofas" class="" onchange="changeSlider" /><span class="p-1" id="rangeSlider">5</span>
-                    <script>
-                            $(function() {
-                                $('#Sofas').slider({
-                                    
-                                    slide: function(event, ui) {
-                                        $('#slider').text(ui.value);
-                                    }
-                                });
-                            $('#slider').text($('#Sofas').slider('slider'));
-                        });
-                    </script>
                 </div>
             </td>
         </tr>

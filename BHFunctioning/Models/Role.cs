@@ -4,14 +4,13 @@ namespace BHFunctioning.Models
 {
     public class Role
     {
-        [Key]
-        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
     }
 
     public class EditRoleModel
     {
+        
         public string Id { get; set; }
 
         [Display(Name = "Role")]
@@ -21,4 +20,11 @@ namespace BHFunctioning.Models
 
     }
 
+    public class UserRoleModel
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public bool IsSelected { get; set; }
+    }
+    
 }
