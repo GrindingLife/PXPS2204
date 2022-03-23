@@ -11,7 +11,7 @@
             </div>
             <div class="form-group row">
                 <label asp-for="Id" class="col-form-label col-2"></label>
-                <input asp-for="Id" class="form-control col-9 p-1 text-center" style="font-size: 0.9em" />
+                <input asp-for="Id" disabled class="form-control col-9 p-1 text-center" style="font-size: 0.9em" />
             </div>
             <div class="form-group row">
                 <label asp-for="Name" class="col-form-label col-2"></label>
@@ -37,7 +37,6 @@
                     {
                         <tr>
                             <td class="form-label">@user</td>
-                            <td class="btn btn-danger btn-sm">Remove</td>
                         </tr>
                     }
                 }
@@ -49,7 +48,7 @@
                 }
             </table>
             <div>
-                <a asp-action="EditUsersInRole" asp-route-id="@Model.Id" class="btn btn-primary">Add/Remove users in role</a>
+                <a asp-action="EditRoleUser" asp-route-id="@Model.Id" class="btn btn-primary">Assign/Remove users roles</a>
             </div>
         </div>
 

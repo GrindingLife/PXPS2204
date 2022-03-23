@@ -208,5 +208,60 @@ namespace BHFunctioning.Controllers
             return View(newRole);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> EditRoleUser(string id)
+        {
+            var roleDb = await _roleManager.FindByIdAsync(id);
+            
+            List<UserRoleModel> listOfUsersInRole = new();
+
+            //Goes through each user and adds them into the list 
+            foreach (var user in _userManager.Users)
+            {
+                UserRoleModel temp = new();
+                temp.Id = user.Id;
+                temp.Name = user.UserName;
+                //Checks if the user has the role and if it does, it will check the checkbox
+                if(await _userManager.IsInRoleAsync(user, roleDb.Name))
+                {
+                    temp.IsSelected = true;
+                }
+                else
+                {
+                    temp.IsSelected = false;
+                }
+                listOfUsersInRole.Add(temp);
+                
+            }
+            return View(listOfUsersInRole);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditRoleUser(UserRoleModel obj)
+        {
+            //id.Id is null for some reason no idea
+            var newRole = await _roleManager.FindByIdAsync(obj.Id);
+            if (newRole == null)
+            {
+                ViewData["ErrorMessage"] = $"No role with Id '{obj.Id}' was found";
+                return View("Error");
+            }
+            else
+            {
+                newRole.Name = obj.Name;
+                var res = await _roleManager.UpdateAsync(newRole);
+                if (res.Succeeded)
+                {
+                    return RedirectToAction("ListAllRoles");
+                }
+                else
+                {
+                    ModelState.AddModelError("Name", "Error editing Role");
+                }
+            }
+
+            return View(newRole);
+        }
+
     }
 }
