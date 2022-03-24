@@ -174,7 +174,7 @@ namespace BHFunctioning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteRole(EditRoleModel obj)
         {
-            //id.Id is null for some reason no idea
+            
             var newRole = await _roleManager.FindByIdAsync(obj.Id);
             if (newRole == null)
             {
@@ -235,33 +235,17 @@ namespace BHFunctioning.Controllers
             }
             return View(listOfUsersInRole);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditRoleUser(UserRoleModel obj)
-        {
-            //id.Id is null for some reason no idea
-            var newRole = await _roleManager.FindByIdAsync(obj.Id);
-            if (newRole == null)
-            {
-                ViewData["ErrorMessage"] = $"No role with Id '{obj.Id}' was found";
-                return View("Error");
-            }
-            else
-            {
-                newRole.Name = obj.Name;
-                var res = await _roleManager.UpdateAsync(newRole);
-                if (res.Succeeded)
-                {
-                    return RedirectToAction("ListAllRoles");
-                }
-                else
-                {
-                    ModelState.AddModelError("Name", "Error editing Role");
-                }
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> EditRoleUser(List<UserRoleModel> obj)
+        //{
+        //    foreach (UserRoleModel tmp in obj)
+        //    {
 
-            return View(newRole);
-        }
+        //    }
+
+        //    return View(newRole);
+        //}
 
     }
 }
